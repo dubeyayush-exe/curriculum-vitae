@@ -1,54 +1,176 @@
-# autoCV
+# Ayush Dubey - Curriculum Vitae
 
-A clean CV template in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version when new changes are pushed to the repo
+[![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white)](https://www.latex-project.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Template Design
+Professional CV/Resume built with LaTeX, showcasing experience in AI/ML, research, and software development.
 
-The template is designed to be clean with sections for
-- Tabular sections for Work Experience, Education and Projects
-- Support for including a list of publications read from a `*.bib` file
-- Header with Font Awesome icons
+## 📄 About
 
-## Quickstart
-- Fork this repo (you can use the `Use this template` button)
-- Give the workflow write permissions for your forked repo (Settings -> Actions -> General)
-- Modify the `cv.tex` file and push changes to your repo
-- Set GitHub pages source to build branch (Settings -> Pages)
-- The complied PDF will be available under the `build` branch
+This repository contains my professional CV, detailing my academic background, professional experience, research publications, projects, and technical skills in the field of Computer Science with specialization in Artificial Intelligence and Machine Learning.
 
-You can get a direct link to the generated PDF which you can use on your website, LinkedIn etc. that will always point to the latest version of your CV. Once your site is published, your CV will be accessible at: `https://username.github.io/repo-name/`
+## 🎓 Highlights
 
-NOTE: For the direct link to work, after editing your copy of `cv.tex` and pushing changes to your repo, under Settings -> Pages set your Github Pages source to the `build` directory
+- **Education**: B.E. in Computer Science (AI & ML) from Chandigarh University
+- **Current Role**: Research & Development Intern at DRDO
+- **Previous Experience**: Machine Learning Intern at Patanjali Ayurveda Pvt. Ltd.
+- **Research**: Published paper on Heart Failure Prediction using ANN at ICETET-SIP 25
+- **Technical Skills**: Python, TensorFlow, PyTorch, OpenCV, Spring Boot, AWS
 
-![](https://i.imgur.com/lwATw1o.png)
+## 🚀 Quick Start
 
-## This template on Overleaf
+### Prerequisites
 
-<a href="https://www.overleaf.com/latex/templates/autocv/scfvqfpxncwb"><img alt="Overleaf" src="https://img.shields.io/badge/Overleaf-47A141.svg?style=for-the-badge&logo=Overleaf&logoColor=white"/></a>
+To compile this CV, you need:
+- A LaTeX distribution (TeX Live, MiKTeX, or MacTeX)
+- Required LaTeX packages (see dependencies below)
 
-Also, if you have a premium subscription to Overleaf, you can use Overleaf's GitHub integration to push changes to your GitHub repo directly from Overleaf.
+### Compilation
 
-## Compiling the CV on your local computer
-- type `make` in the `autoCV` directory to produce file `cv.pdf`
-- you can optionally type `make clean` or `make distclean` to remove intermediate files
+#### Using `pdflatex`:
+```bash
+pdflatex cv.tex
+biber cv
+pdflatex cv.tex
+pdflatex cv.tex
+```
 
-## Detailed Instructions..
+#### Using `xelatex` (recommended for custom fonts):
+```bash
+xelatex cv.tex
+biber cv
+xelatex cv.tex
+xelatex cv.tex
+```
 
-[.. are available here](https://github.com/jitinnair1/autoCV/wiki/How-to-use-autoCV:-Detailed-Instructions)
+#### Using Overleaf:
+1. Upload `cv.tex` to [Overleaf](https://www.overleaf.com/)
+2. Click "Recompile" to generate the PDF
 
-## More options
-- If you'd like a custom URL like `cv.name.com` check out [this page](https://github.com/jitinnair1/autoCV/wiki/Custom-URL-for-your-CV)
-- If you want to add use different versions of the CV for different langauges, you can modify the script [as seen here](https://github.com/MateusRosario/myAutoCV/blob/main/.github/workflows/build.yml) (from Mateus Rosario's [fork](https://github.com/MateusRosario/myAutoCV) of this repo)  
+## 📦 Dependencies
 
-## Issues
-Please start a new discussion or issue if you encounter problems
+The following LaTeX packages are required:
 
-PS: If you liked the template, do star :star: it! Thanks!
+- `fontawesome5` - For social media icons
+- `xcolor` - For color support
+- `hyperref` - For clickable links
+- `tabularx` - For advanced table formatting
+- `titlesec` - For custom section formatting
+- `biblatex` - For bibliography management
+- `enumitem` - For customized lists
+- `geometry` - For page layout customization
 
+Most LaTeX distributions include these packages by default.
 
-### Also, check out:
+## 🔧 Customization
 
-- [gradfolio](https://github.com/jitinnair1/gradfolio) - a minimal, quick-setup template for a personal website/portfolio
-- [Tail](https://github.com/jitinnair1/tail) - a minimal, quick-setup template for a blog
-- [snippet-book](https://github.com/jitinnair1/snippet-book) -terminal style, clean Jekyll blog theme with catppuccin colours
+### Updating Personal Information
 
+Edit the header section in `cv.tex`:
+
+```latex
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Your Name} \\[7.5pt]
+\href{https://github.com/username}{GitHub} \ $|$ \ 
+\href{https://linkedin.com/in/username}{LinkedIn} \ $|$ \ 
+...
+\end{tabularx}
+```
+
+### Adding New Sections
+
+The CV uses custom environments for job entries:
+
+**Short job entry** (no bullet points):
+```latex
+\begin{jobshort}{Position Title}{Date Range}
+Description text here
+\end{jobshort}
+```
+
+**Long job entry** (with bullet points):
+```latex
+\begin{joblong}{Position Title}{Date Range}
+\item First achievement or responsibility
+\item Second achievement or responsibility
+\end{joblong}
+```
+
+### Modifying Colors
+
+Change link colors by editing:
+```latex
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+```
+
+## 📊 Structure
+
+```
+.
+├── cv.tex              # Main CV LaTeX file
+├── citations.bib       # Bibliography file (if needed)
+└── README.md          # This file
+```
+
+## 🤖 Auto-Compilation with GitHub Actions
+
+You can set up automatic PDF generation using GitHub Actions:
+
+1. Create `.github/workflows/compile-latex.yml`:
+
+```yaml
+name: Build LaTeX CV
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv.tex
+      
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: CV-PDF
+          path: cv.pdf
+```
+
+2. Push to GitHub - PDF will be generated automatically on each commit
+
+## 📱 Online Profiles
+
+- **GitHub**: [dubeyayush-exe](https://github.com/dubeyayush-exe)
+- **LinkedIn**: [Ayush Dubey](https://www.linkedin.com/in/ayush-dubey-b445a123a)
+- **Portfolio**: [dubeyayush-exe.github.io](https://github.com/dubeyayush-exe/dubeyayush-exe.github.io)
+- **Medium**: [@ayushdubey421](https://medium.com/@ayushdubey421)
+- **Email**: ayushdubey421@gmail.com
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE section in `cv.tex` for details.
+
+Original template by [Jitin Nair](https://github.com/jitinnair1).
+
+## 🙏 Acknowledgments
+
+- Template inspired by various LaTeX CV templates
+- Built with support from the LaTeX community
+- Special thanks to Chandigarh University, DRDO, and Patanjali Ayurveda for professional opportunities
+
+## 📧 Contact
+
+For any queries or suggestions, feel free to reach out via:
+- Email: ayushdubey421@gmail.com
+- LinkedIn: [Ayush Dubey](https://www.linkedin.com/in/ayush-dubey-b445a123a)
+
+---
+
+**Last Updated**: October 2025
+
+⭐ If you find this CV template helpful, consider giving it a star!
