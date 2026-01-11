@@ -64,9 +64,11 @@
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
 \textbf{Chandigarh University} & B.E. Computer Science: AI \& Machine Learning & \hfill 2022 - 2026 \\
-\multicolumn{3}{@{}X@{}}{\small Relevant Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures \& Algorithms, DBMS}
+\multicolumn{2}{@{}X@{}}{
+\textbf{Relevant Coursework:} Machine Learning, Deep Learning, Artificial Intelligence, Natural Language Processing, Data Structures \& Algorithms, DBMS
+}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -74,7 +76,7 @@
 %----------------------------------------------------------------------------------------
 \section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{ML/AI} & Computer Vision (ResNet, YOLO, Detection/Segmentation), NLP, Time Series Forecasting, Model Optimization \\
+\textbf{ML/AI} & Computer Vision, NLP, Time Series Forecasting, Model Optimization \\
 \textbf{Languages} & Python, C++, Java, SQL \\
 \textbf{Frameworks} & PyTorch, TensorFlow, OpenCV, Scikit-learn, FastAPI, LangChain, Ollama \\
 \textbf{MLOps} & MLflow, Docker, Prometheus, Grafana, Redis, CI/CD (GitHub Actions) \\
@@ -86,7 +88,7 @@
 %----------------------------------------------------------------------------------------
 \section{Professional Experience}
 
-\begin{joblong}{Research \& Development Intern, Defense Research \& Development Organization (DRDO)}{June 2025 - Present}
+\begin{joblong}{Research \& Development Intern, DRDO}{June 2025 - Present}
 \item Engineered 3D GRU-based scene reconstruction pipeline using PyTorch, improving accuracy from 48.1\% to 90.8\% (42.7\% gain) for defense-grade vision systems deployed in surveillance applications
 \item Collaborated with cross-functional teams (signal processing experts, physicists) to optimize model latency to 180ms/frame while maintaining 85\%+ accuracy on real-world defense datasets
 \end{joblong}
@@ -104,12 +106,10 @@
 \begin{joblong}{LocalMind: Hybrid AI Assistant with MLOps Pipeline}{June 2024 - Aug 2024}
 \item Built production-grade CLI assistant using Ollama (Llama 3.2 3B) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and 2.34/month cost savings vs API-only approach
 \item Implemented MLOps infrastructure with MLflow (experiment tracking), Prometheus + Grafana (monitoring 15+ metrics including latency, accuracy, cost per query), demonstrating 99.2\% uptime over 30 days
-\item Architected intelligent routing system using lightweight classifier (XGBoost) deciding local vs cloud execution based on query complexity, reducing average response latency to 340ms (p95: 890ms)
 \end{joblong}
 
 \begin{joblong}{PulsePay: Health ML Platform with Subscription System}{June 2024 - Aug 2024}
 \item Developing cardiovascular risk prediction system using XGBoost on 10K+ patient records, achieving 84\% AUC with SHAP explainability for clinical interpretability
-\item Building automated ML pipeline with model versioning (MLflow), A/B testing framework, and drift detection (Evidently), reducing model deployment time from manual 2-day process to automated 15-minute CI/CD
 \item Integrated Stripe subscription API with webhook handling for payment processing, implementing feature-gating logic and usage-based billing for 3-tier SaaS model
 \end{joblong}
 
@@ -119,8 +119,8 @@
 \section{Research and Publications}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Heart Failure Prediction using Artificial Neural Networks (ANN)} & \hfill Jan 2025 - May 2025 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Presented at ICETET-SIP 25 | Paper ID: 753}  \\[3.75pt]
+\textbf{Heart Failure Prediction using Artificial Neural Networks (ANN)} & \hfill Jan 2025 - May 2025 \\[3.25pt]
+\multicolumn{2}{@{}X@{}}{Presented at ICETET-SIP 25 | Paper ID: 753}  \\[3.00pt]
 \multicolumn{2}{@{}X@{}}{Published ANN-based heart failure predictor (87\% accuracy, AUC 0.82) enabling early intervention in clinical ML pipelines. Recognized at ICETET-SIP 25 for its application potential in healthcare technology}  \\
 \end{tabularx}
 
