@@ -32,21 +32,26 @@
 
 \newenvironment{joblong}[2]
     {
-    % Header stays normal size
+    % Header
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
     \textbf{#1} & \hfill & #2 \\[2.5pt]
     \end{tabularx}
 
-    % Bullets slightly smaller
-    \small
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut,leftmargin=1em,itemsep=2pt,label=--]
+    \begin{itemize}[
+        nosep,
+        after=\strut,
+        leftmargin=1em,
+        itemsep=2pt,
+        label=--,
+        font=\small
+    ]
     }
     {
     \end{itemize}
     \end{minipage}
-    \normalsize
     }
+
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
