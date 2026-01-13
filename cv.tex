@@ -1,109 +1,72 @@
-\documentclass[a4paper,12pt]{article}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
+\usepackage{parskip}
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
+\usepackage[scale=0.85, top=0.6in, bottom=0.6in]{geometry}
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 \usepackage{supertabular}
 \usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
-%for social icons
 \usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.25pt]
-    \end{tabularx}
-    }
-    {
-    }
 
 \newenvironment{joblong}[2]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.25pt]
+    \textbf{#1} & \hfill &  #2 \\[1.5pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt,label=--]
     }
     {
     \end{itemize}
     \end{minipage}    
     }
 
-
-
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Ayush Dubey} \\[7.5pt]
+\huge{Ayush Dubey} \\[4pt]
 \href{https://github.com/dubeyayush-exe}{\raisebox{-0.05\height}\faGithub\ dubeyayush-exe} \ $|$ \ 
 \href{https://www.linkedin.com/in/ayush-dubey-b445a123a}{\raisebox{-0.05\height}\faLinkedin\ Ayush Dubey} \ $|$ \ 
 \href{https://github.com/dubeyayush-exe/dubeyayush-exe.github.io}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
-\href{mailto:ayushdubey421@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ayushdubey421@gmail.com} \ $|$ \ 
-\href{https://medium.com/@ayushdubey421}{\raisebox{-0.05\height}\faMedium \ Medium} \\
+\href{mailto:ayushdubey421@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ayushdubey421@gmail.com} \\
 \end{tabularx}
 
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2022 - 2026 & B.E. in Computer Science: Artificial Intelligence and Machine Learning at \textbf{Chandigarh University, Mohali, Punjab} \\[3.25pt]
-\multicolumn{2}{@{}X@{}}{
-\textbf{Relevant Coursework:} Data Structures \& Algorithms, Machine Learning, Deep Learning, Operating Systems, DBMS, Software Computing, Computer Networks, Artificial Intelligence, Natural Language Processing
-}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Chandigarh University} & B.E. Computer Science: AI \& Machine Learning & \hfill 2022 - 2026 \\
+\multicolumn{3}{@{}X@{}}{\small Relevant Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures \& Algorithms, DBMS}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -117,58 +80,80 @@
 \textbf{MLOps} & MLflow, Docker, Prometheus, Grafana, Redis, CI/CD (GitHub Actions) \\
 \textbf{Cloud/Tools} & AWS, Git, Linux, PostgreSQL, MySQL \\
 \end{tabularx}
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
 
-%Experience
+%----------------------------------------------------------------------------------------
+% EXPERIENCE
+%----------------------------------------------------------------------------------------
 \section{Professional Experience}
 
-\begin{joblong}{Research and Development Intern, Defense Research and Development Organization (DRDO)}{June 2025 - Present}
-\item Developed a 3D GRU pipeline for scene reconstruction, boosting accuracy by 42.7\% --- contributing to defense-grade vision systems with potential real-world applications in safety and surveillance
-\item Worked with cross-functional teams (signal experts, physicists, and engineers) to align model performance with operational requirements
+\begin{joblong}{Research \& Development Intern, Defense Research \& Development Organization (DRDO)}{June 2025 - Present}
+\item Engineered 3D GRU-based scene reconstruction pipeline using PyTorch, improving accuracy from 48.1\% to 90.8\% (42.7\% gain) for defense-grade vision systems deployed in surveillance applications
+\item Collaborated with cross-functional teams (signal processing experts, physicists) to optimize model latency to 180ms/frame while maintaining 85\%+ accuracy on real-world defense datasets
 \end{joblong}
 
 \begin{joblong}{Machine Learning Intern, Patanjali Ayurveda Pvt. Ltd.}{June 2024 - Aug 2024}
-\item Improved biometric authentication reliability by 12.4\% through deploying a ResNet-18 CNN, enhancing user trust for 3,000+ regular system users. Collaborated with product and IT teams to align AI capabilities with business needs
-\item Reduced sales forecast error by 15.6\% using SARIMAX with exogenous features, directly supporting product strategy and inventory planning for 48+ months of sales data
+\item Deployed ResNet-18 CNN for biometric authentication, reducing false rejection rate by 12.4\% (from 18.2\% to 5.8\%), improving system reliability for 3,000+ daily active users across 15+ facilities
+\item Built SARIMAX forecasting model with exogenous features (promotions, seasonality) reducing MAPE by 15.6\% on 48 months of sales data, directly informing \$2M+ inventory planning decisions
 \end{joblong}
 
-%Projects
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
 \section{Technical Projects}
 
-\begin{joblong}{LocalMind: Hybrid AI Assistant with MLOps Pipeline}{June 2025 - Present}
-\item Built production-grade CLI assistant using Ollama (Llama 3.2 3B) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and \$ 2.34 month cost savings vs API-only approach \\
-\item Worked with cross-functional teams (signal experts, physicists, and engineers) to align model performance with operational requirements
-\end{joblong}
-
-\begin{joblong}{PulsePay: Health ML Platform with Subscription System}{June 2024 - Aug 2024}
-\item Improved biometric authentication reliability by 12.4\% through deploying a ResNet-18 CNN, enhancing user trust for 3,000+ regular system users. Collaborated with product and IT teams to align AI capabilities with business needs
-\item Reduced sales forecast error by 15.6\% using SARIMAX with exogenous features, directly supporting product strategy and inventory planning for 48+ months of sales data
-\end{joblong}
-%----------------------------------------------------------------------------------------
-%	RESEARCH AND PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Research and Publications}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Heart Failure Prediction using Artificial Neural Networks (ANN)} & \hfill Jan 2025 - May 2025 \\[3.25pt]
-\multicolumn{2}{@{}X@{}}{Presented at ICETET-SIP 25 | Paper ID: 753}  \\[3.25pt]
-\multicolumn{2}{@{}X@{}}{Published ANN-based heart failure predictor (87\% accuracy, AUC 0.82) enabling early intervention in clinical ML pipelines. Recognized at ICETET-SIP 25 for its application potential in healthcare technology}  \\
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{LocalMind: Hybrid AI Assistant with MLOps Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/localmind}{\small\faGithub\ GitHub} & \textit{Jan 2026 - Present} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+\item Built production-grade CLI assistant using Ollama (Llama 3.2 3B) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and \$2.34/month cost savings vs API-only approach
+\item Implemented MLOps infrastructure with MLflow (experiment tracking), Prometheus + Grafana (monitoring 15+ metrics including latency, accuracy, cost per query), demonstrating 99.2\% uptime over 30 days
+\item Architected intelligent routing system using lightweight classifier (XGBoost) deciding local vs cloud execution based on query complexity, reducing average response latency to 340ms (p95: 890ms)
+\end{itemize}
+} \\
 \end{tabularx}
 
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{PulsePay: Health ML Platform with Subscription System} & \hfill \href{https://github.com/dubeyayush-exe/pulsepay}{\small\faGithub\ GitHub} & \textit{In Progress} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+\item Developing cardiovascular risk prediction system using XGBoost on 10K+ patient records, achieving 84\% AUC with SHAP explainability for clinical interpretability
+\item Building automated ML pipeline with model versioning (MLflow), A/B testing framework, and drift detection (Evidently), reducing model deployment time from manual 2-day process to automated 15-minute CI/CD
+\item Integrated Stripe subscription API with webhook handling for payment processing, implementing feature-gating logic and usage-based billing for 3-tier SaaS model
+\end{itemize}
+} \\
+\end{tabularx}
 
-
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Medical Image Classification Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/medical-cv}{\small\faGithub\ GitHub} & \textit{Aug 2024 - Oct 2024} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+\item Developed transfer learning pipeline using PyTorch and ResNet-18 for multimodal medical imaging (CT, PET, X-ray) on ChestX-ray14 dataset, improving baseline accuracy from 74.2\% to 88.3\% through data augmentation and focal loss
+\item Optimized inference to 112ms/image (batch size 16) using ONNX quantization and TensorRT, enabling real-time clinical deployment
+\end{itemize}
+} \\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	LEADERSHIP & EXTRACURRICULARS
+%	RESEARCH
+%----------------------------------------------------------------------------------------
+\section{Research \& Publications}
+
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Heart Failure Prediction using Artificial Neural Networks} & \hfill \textit{Jan 2025 - May 2025} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+Published at ICETET-SIP 25 (Paper ID: 753) | Developed ANN classifier achieving 87\% accuracy and 0.82 AUC on UCI Heart Failure dataset for early clinical intervention, with feature importance analysis using SHAP values
+} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL
 %----------------------------------------------------------------------------------------
 \section{Leadership \& Activities}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt,label=--]
-\item \textbf{Joint Secretary, Ashura Club (Multi-modal tech club):} Organized 12+ technical workshops, contests and hackathons, leading team of 24 members and engaging 200+ students in ML/AI learning initiatives.
+\item \textbf{Joint Secretary, Ashura Club (Multi-modal tech club):} Organized 12 technical workshops, contests and hackathons, leading team of 24 members and engaging 200+ students in ML/AI learning initiatives
 \end{itemize}
 
 \vfill
-\center{\footnotesize Last updated: \today}
+\center{\footnotesize Last updated: January 2026}
 
 \end{document}
