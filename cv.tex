@@ -20,6 +20,7 @@
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
+\usepackage{datetime}
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{6pt}{6pt}
@@ -32,11 +33,11 @@
 
 \newenvironment{joblong}[2]
     {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[1.5pt]
+    \begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[1.0pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt,label=--]
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
     }
     {
     \end{itemize}
@@ -53,7 +54,7 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\huge{Ayush Dubey} \\[4pt]
+\huge{Ayush Kumar Dubey} \\[3.5pt]
 \href{https://github.com/dubeyayush-exe}{\raisebox{-0.05\height}\faGithub\ dubeyayush-exe} \ $|$ \ 
 \href{https://www.linkedin.com/in/ayush-dubey-b445a123a}{\raisebox{-0.05\height}\faLinkedin\ Ayush Dubey} \ $|$ \ 
 \href{https://github.com/dubeyayush-exe/dubeyayush-exe.github.io}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
@@ -64,10 +65,10 @@
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X r@{}}
-\textbf{Chandigarh University} & B.E. Computer Science: AI \& Machine Learning & \hfill 2022 - 2026 \\
-\multicolumn{3}{@{}X@{}}{\small Relevant Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures \& Algorithms, DBMS}
-\end{tabularx}
+\begin{joblong}{Bachelor of Technology: Artificial Intelligence and Machine Learning} {2022 - 2026}
+\item[] \textbf{Chandigarh University}
+\item[] \textbf{Relevant Coursework:} Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures \& Algorithms, DBMS
+\end{joblong}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
@@ -86,12 +87,12 @@
 %----------------------------------------------------------------------------------------
 \section{Professional Experience}
 
-\begin{joblong}{Research \& Development Intern, Defense Research \& Development Organization (DRDO)}{June 2025 - Present}
+\begin{joblong}{AI/ML Intern, Defense Research and Development Organization (DRDO)}{2022 - 2026}
 \item Engineered 3D GRU-based scene reconstruction pipeline using PyTorch, improving accuracy from 48.1\% to 90.8\% (42.7\% gain) for defense-grade vision systems deployed in surveillance applications
 \item Collaborated with cross-functional teams (signal processing experts, physicists) to optimize model latency to 180ms/frame while maintaining 85\%+ accuracy on real-world defense datasets
 \end{joblong}
 
-\begin{joblong}{Machine Learning Intern, Patanjali Ayurveda Pvt. Ltd.}{June 2024 - Aug 2024}
+\begin{joblong}{Machine Learning Intern, Patanjali Ayurveda Pvt. Ltd.}{2022 - 2026}
 \item Deployed ResNet-18 CNN for biometric authentication, reducing false rejection rate by 12.4\% (from 18.2\% to 5.8\%), improving system reliability for 3,000+ daily active users across 15+ facilities
 \item Built SARIMAX forecasting model with exogenous features (promotions, seasonality) reducing MAPE by 15.6\% on 48 months of sales data, directly informing \$2M+ inventory planning decisions
 \end{joblong}
@@ -101,37 +102,18 @@
 %----------------------------------------------------------------------------------------
 \section{Technical Projects}
 
-\begin{tabularx}{\linewidth}{@{}l X r@{}}
-\textbf{LocalMind: Hybrid AI Assistant with MLOps Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/localmind}{\small\faGithub\ GitHub} & \textit{Jan 2026 - Present} \\[2.5pt]
-\multicolumn{3}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
-\item Built production-grade CLI assistant using Ollama (Llama 3.2 3B) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and \$2.34/month cost savings vs API-only approach
+\begin{joblong}{LocalMind: Hybrid AI Assistant with MLOps Pipeline}{}
+\item Built production-grade CLI assistant using Ollama (Llama 3.2) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and \$2.34/month cost savings vs API-only approach
 \item Implemented MLOps infrastructure with MLflow (experiment tracking), Prometheus + Grafana (monitoring 15+ metrics including latency, accuracy, cost per query), demonstrating 99.2\% uptime over 30 days
-\item Architected intelligent routing system using lightweight classifier (XGBoost) deciding local vs cloud execution based on query complexity, reducing average response latency to 340ms (p95: 890ms)
-\end{itemize}
-} \\
-\end{tabularx}
+\item Architected intelligent routing system using lightweight classifier (XGBoost) deciding local vs cloud execution based on query complexity, reducing average response latency to 340ms
+\end{joblong}
 
-\begin{tabularx}{\linewidth}{@{}l X r@{}}
-\textbf{PulsePay: Health ML Platform with Subscription System} & \hfill \href{https://github.com/dubeyayush-exe/pulsepay}{\small\faGithub\ GitHub} & \textit{In Progress} \\[2.5pt]
-\multicolumn{3}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
-\item Developing cardiovascular risk prediction system using XGBoost on 10K+ patient records, achieving 84\% AUC with SHAP explainability for clinical interpretability
+\begin{joblong}{PulsePay: Health ML Platform with Subscription System}{}
+\item Developing cardiovascular risk prediction system using XGBoost on 10K\+ patient records, achieving 84\% AUC with SHAP explainability for clinical interpretability
 \item Building automated ML pipeline with model versioning (MLflow), A/B testing framework, and drift detection (Evidently), reducing model deployment time from manual 2-day process to automated 15-minute CI/CD
 \item Integrated Stripe subscription API with webhook handling for payment processing, implementing feature-gating logic and usage-based billing for 3-tier SaaS model
-\end{itemize}
-} \\
-\end{tabularx}
+\end{joblong}
 
-\begin{tabularx}{\linewidth}{@{}l X r@{}}
-\textbf{Medical Image Classification Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/medical-cv}{\small\faGithub\ GitHub} & \textit{Aug 2024 - Oct 2024} \\[2.5pt]
-\multicolumn{3}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
-\item Developed transfer learning pipeline using PyTorch and ResNet-18 for multimodal medical imaging (CT, PET, X-ray) on ChestX-ray14 dataset, improving baseline accuracy from 74.2\% to 88.3\% through data augmentation and focal loss
-\item Optimized inference to 112ms/image (batch size 16) using ONNX quantization and TensorRT, enabling real-time clinical deployment
-\end{itemize}
-} \\
-\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	RESEARCH
@@ -149,11 +131,11 @@ Published at ICETET-SIP 25 (Paper ID: 753) | Developed ANN classifier achieving 
 %	ADDITIONAL
 %----------------------------------------------------------------------------------------
 \section{Leadership \& Activities}
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt,label=--]
-\item \textbf{Joint Secretary, Ashura Club (Multi-modal tech club):} Organized 12 technical workshops, contests and hackathons, leading team of 24 members and engaging 200+ students in ML/AI learning initiatives
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt]
+\item[] \textbf{Joint Secretary, Ashura Club:} Organized 12 technical workshops and hackathons in my college, leading a team of 24 members and engaging 200+ students in ML/AI learning initiatives
 \end{itemize}
 
 \vfill
-\center{\footnotesize Last updated: January 2026}
+\center{\footnotesize Last updated: \today}
 
 \end{document}
