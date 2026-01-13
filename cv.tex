@@ -11,7 +11,7 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.85, top=0.6in, bottom=0.6in]{geometry}
+\usepackage[scale=0.9, top=0.5in, bottom=0.4in, left=0.5in, right=0.5in]{geometry}
 \usepackage{tabularx}
 \usepackage{enumitem}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
@@ -22,7 +22,7 @@
 \usepackage{multirow}
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{6pt}{6pt}
+\titlespacing{\section}{0pt}{4pt}{2pt}
 
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
@@ -33,14 +33,16 @@
 \newenvironment{joblong}[2]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[1.5pt]
+    \textbf{#1} & \hfill &  #2 \\[0.5pt]
     \end{tabularx}
+    \vspace{-2pt}
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt,label=--]
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt,label=--]
     }
     {
     \end{itemize}
-    \end{minipage}    
+    \end{minipage}
+    \vspace{2pt}
     }
 
 %----------------------------------------------------------------------------------------
@@ -53,7 +55,7 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\huge{Ayush Dubey} \\[4pt]
+\huge{Ayush Dubey} \\[2pt]
 \href{https://github.com/dubeyayush-exe}{\raisebox{-0.05\height}\faGithub\ dubeyayush-exe} \ $|$ \ 
 \href{https://www.linkedin.com/in/ayush-dubey-b445a123a}{\raisebox{-0.05\height}\faLinkedin\ Ayush Dubey} \ $|$ \ 
 \href{https://github.com/dubeyayush-exe/dubeyayush-exe.github.io}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
@@ -72,9 +74,11 @@
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
+\vspace{-2pt}
 \section{Technical Skills}
+\vspace{-2pt}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{ML/AI} & Computer Vision (ResNet, YOLO, Detection/Segmentation), NLP, Time Series Forecasting, Model Optimization \\
+\textbf{ML/AI} & Computer Vision (ResNet, YOLO), NLP, Time Series, Model Optimization \\
 \textbf{Languages} & Python, C++, Java, SQL \\
 \textbf{Frameworks} & PyTorch, TensorFlow, OpenCV, Scikit-learn, FastAPI, LangChain, Ollama \\
 \textbf{MLOps} & MLflow, Docker, Prometheus, Grafana, Redis, CI/CD (GitHub Actions) \\
@@ -84,7 +88,9 @@
 %----------------------------------------------------------------------------------------
 % EXPERIENCE
 %----------------------------------------------------------------------------------------
+\vspace{-2pt}
 \section{Professional Experience}
+\vspace{-2pt}
 
 \begin{joblong}{Research \& Development Intern, Defense Research \& Development Organization (DRDO)}{June 2025 - Present}
 \item Engineered 3D GRU-based scene reconstruction pipeline using PyTorch, improving accuracy from 48.1\% to 90.8\% (42.7\% gain) for defense-grade vision systems deployed in surveillance applications
@@ -99,7 +105,9 @@
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
+\vspace{-2pt}
 \section{Technical Projects}
+\vspace{-2pt}
 
 \begin{tabularx}{\linewidth}{@{}l X r@{}}
 \textbf{LocalMind: Hybrid AI Assistant with MLOps Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/localmind}{\small\faGithub\ GitHub} & \textit{Jan 2026 - Present} \\[2.5pt]
@@ -136,7 +144,9 @@
 %----------------------------------------------------------------------------------------
 %	RESEARCH
 %----------------------------------------------------------------------------------------
+\vspace{-2pt}
 \section{Research \& Publications}
+\vspace{-2pt}
 
 \begin{tabularx}{\linewidth}{@{}l X r@{}}
 \textbf{Heart Failure Prediction using Artificial Neural Networks} & \hfill \textit{Jan 2025 - May 2025} \\[2.5pt]
@@ -148,9 +158,11 @@ Published at ICETET-SIP 25 (Paper ID: 753) | Developed ANN classifier achieving 
 %----------------------------------------------------------------------------------------
 %	ADDITIONAL
 %----------------------------------------------------------------------------------------
+\vspace{-2pt}
 \section{Leadership \& Activities}
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt,label=--]
-\item \textbf{Joint Secretary, Ashura Club (Multi-modal tech club):} Organized 12 technical workshops and hackathons, leading team of 8 members and engaging 200+ students in ML/AI learning initiatives
+\vspace{-4pt}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=0pt,label=--]
+\item \textbf{Joint Secretary, Ashura Club:} Organized 12 technical workshops and hackathons, leading team of 8 members
 \end{itemize}
 
 \vfill
