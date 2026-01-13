@@ -1,7 +1,7 @@
 %----------------------------------------------------------------------------------------
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
@@ -21,8 +21,8 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{8pt}{8pt}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
 
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
@@ -32,26 +32,16 @@
 
 \newenvironment{joblong}[2]
     {
-    % Header
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill & #2 \\[2.5pt]
+    \textbf{#1} & \hfill &  #2 \\[1.5pt]
     \end{tabularx}
-
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[
-        nosep,
-        after=\strut,
-        leftmargin=1em,
-        itemsep=2pt,
-        label=--,
-        font=\small
-    ]
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt,label=--]
     }
     {
     \end{itemize}
-    \end{minipage}
+    \end{minipage}    
     }
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -63,7 +53,7 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Ayush Dubey} \\[5pt]
+\huge{Ayush Dubey} \\[4pt]
 \href{https://github.com/dubeyayush-exe}{\raisebox{-0.05\height}\faGithub\ dubeyayush-exe} \ $|$ \ 
 \href{https://www.linkedin.com/in/ayush-dubey-b445a123a}{\raisebox{-0.05\height}\faLinkedin\ Ayush Dubey} \ $|$ \ 
 \href{https://github.com/dubeyayush-exe/dubeyayush-exe.github.io}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
@@ -71,12 +61,12 @@
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%    EDUCATION
+%	EDUCATION
 %----------------------------------------------------------------------------------------
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Chandigarh University} & \hfill 2022--2026 \\
-\multicolumn{2}{@{}X@{}}{\textbf{B.E. Computer Science — AI \& Machine Learning}} \\
-\multicolumn{2}{@{}X@{}}{\textbf{Relevant Coursework:} Machine Learning, Deep Learning, Artificial Intelligence, NLP, DSA, DBMS} \\
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Chandigarh University} & B.E. Computer Science: AI \& Machine Learning & \hfill 2022 - 2026 \\
+\multicolumn{3}{@{}X@{}}{\small Relevant Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures \& Algorithms, DBMS}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -84,7 +74,7 @@
 %----------------------------------------------------------------------------------------
 \section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{ML/AI} & Computer Vision, NLP, Time Series Forecasting, Model Optimization \\
+\textbf{ML/AI} & Computer Vision (ResNet, YOLO, Detection/Segmentation), NLP, Time Series Forecasting, Model Optimization \\
 \textbf{Languages} & Python, C++, Java, SQL \\
 \textbf{Frameworks} & PyTorch, TensorFlow, OpenCV, Scikit-learn, FastAPI, LangChain, Ollama \\
 \textbf{MLOps} & MLflow, Docker, Prometheus, Grafana, Redis, CI/CD (GitHub Actions) \\
@@ -96,7 +86,7 @@
 %----------------------------------------------------------------------------------------
 \section{Professional Experience}
 
-\begin{joblong}{Research \& Development Intern, DRDO}{June 2025 - Present}
+\begin{joblong}{Research \& Development Intern, Defense Research \& Development Organization (DRDO)}{June 2025 - Present}
 \item Engineered 3D GRU-based scene reconstruction pipeline using PyTorch, improving accuracy from 48.1\% to 90.8\% (42.7\% gain) for defense-grade vision systems deployed in surveillance applications
 \item Collaborated with cross-functional teams (signal processing experts, physicists) to optimize model latency to 180ms/frame while maintaining 85\%+ accuracy on real-world defense datasets
 \end{joblong}
@@ -111,25 +101,48 @@
 %----------------------------------------------------------------------------------------
 \section{Technical Projects}
 
-\begin{joblong}{LocalMind: Hybrid AI Assistant with MLOps Pipeline}{June 2024 - Aug 2024}
-\item Built production-grade CLI assistant using Ollama (Llama 3.2 3B) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and 2.34/month cost savings vs API-only approach
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{LocalMind: Hybrid AI Assistant with MLOps Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/localmind}{\small\faGithub\ GitHub} & \textit{Jan 2026 - Present} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+\item Built production-grade CLI assistant using Ollama (Llama 3.2 3B) for offline inference and Claude API for complex queries, achieving 73\% local routing rate and \$2.34/month cost savings vs API-only approach
 \item Implemented MLOps infrastructure with MLflow (experiment tracking), Prometheus + Grafana (monitoring 15+ metrics including latency, accuracy, cost per query), demonstrating 99.2\% uptime over 30 days
-\end{joblong}
+\item Architected intelligent routing system using lightweight classifier (XGBoost) deciding local vs cloud execution based on query complexity, reducing average response latency to 340ms (p95: 890ms)
+\end{itemize}
+} \\
+\end{tabularx}
 
-\begin{joblong}{PulsePay: Health ML Platform with Subscription System}{June 2024 - Aug 2024}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{PulsePay: Health ML Platform with Subscription System} & \hfill \href{https://github.com/dubeyayush-exe/pulsepay}{\small\faGithub\ GitHub} & \textit{In Progress} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
 \item Developing cardiovascular risk prediction system using XGBoost on 10K+ patient records, achieving 84\% AUC with SHAP explainability for clinical interpretability
+\item Building automated ML pipeline with model versioning (MLflow), A/B testing framework, and drift detection (Evidently), reducing model deployment time from manual 2-day process to automated 15-minute CI/CD
 \item Integrated Stripe subscription API with webhook handling for payment processing, implementing feature-gating logic and usage-based billing for 3-tier SaaS model
-\end{joblong}
+\end{itemize}
+} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Medical Image Classification Pipeline} & \hfill \href{https://github.com/dubeyayush-exe/medical-cv}{\small\faGithub\ GitHub} & \textit{Aug 2024 - Oct 2024} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+\item Developed transfer learning pipeline using PyTorch and ResNet-18 for multimodal medical imaging (CT, PET, X-ray) on ChestX-ray14 dataset, improving baseline accuracy from 74.2\% to 88.3\% through data augmentation and focal loss
+\item Optimized inference to 112ms/image (batch size 16) using ONNX quantization and TensorRT, enabling real-time clinical deployment
+\end{itemize}
+} \\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	RESEARCH
 %----------------------------------------------------------------------------------------
-\section{Research and Publications}
+\section{Research \& Publications}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Heart Failure Prediction using Artificial Neural Networks (ANN)} & \hfill Jan 2025 - May 2025 \\[3.25pt]
-\multicolumn{2}{@{}X@{}}{Presented at ICETET-SIP 25 | Paper ID: 753}  \\[3.00pt]
-\multicolumn{2}{@{}X@{}}{Published ANN-based heart failure predictor (87\% accuracy, AUC 0.82) enabling early intervention in clinical ML pipelines. Recognized at ICETET-SIP 25 for its application potential in healthcare technology}  \\
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Heart Failure Prediction using Artificial Neural Networks} & \hfill \textit{Jan 2025 - May 2025} \\[2.5pt]
+\multicolumn{3}{@{}X@{}}{
+Published at ICETET-SIP 25 (Paper ID: 753) | Developed ANN classifier achieving 87\% accuracy and 0.82 AUC on UCI Heart Failure dataset for early clinical intervention, with feature importance analysis using SHAP values
+} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
